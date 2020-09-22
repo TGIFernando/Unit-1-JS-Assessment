@@ -47,7 +47,13 @@ function getFilmCount(character) {
  * If length is 0. Return 'none'
  */
 function getSecondStarshipName(character) {
-    // TODO: Add your code here.
+    let starName;
+    if (character.starships.length > 1) {
+        starName = character.starships[1].name;
+    } else {
+        starName = 'none';
+    }
+    return starName;
 }
 
 /**
