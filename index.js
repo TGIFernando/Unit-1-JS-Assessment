@@ -133,6 +133,11 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  */
 function getNthFilm(character, filmNumber) {
     // TODO: Add your code here.
+    if (filmNumber > 3 || filmNumber < 1) {
+        throw Error('There are only 3 Star Wars movies. Flan fiction excluded.');
+    } else {
+        return character.films[filmNumber - 1];
+    }
 }
 
 /**
