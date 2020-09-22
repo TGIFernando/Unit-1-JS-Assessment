@@ -80,6 +80,14 @@ function getSummary(character) {
  */
 function getVehiclesCostInCreditsSumTotal(character) {
     // TODO: Add your code here.
+    return character.vehicles.reduce((acc, v) => {
+        const cost = v["cost_in_credits"];
+        if (cost !== null) {
+            return acc + cost;
+        } else {
+            return acc;
+        }
+    }, 0);
 }
 
 /**
@@ -94,6 +102,20 @@ function getVehiclesCostInCreditsSumTotal(character) {
  */
 function getStarshipPassengerAndCrewSumTotal(character) {
     // TODO: Add your code here.
+    return character.starships.reduce((acc, ship) => {
+        const crew = ship["crew"];
+        const passengers = ship["passengers"];
+        if (crew !== null) {
+            if (passengers !== null) {
+                return acc + crew + passengers;
+            }
+            return acc + crew;
+        } else if (passengers !== null) {
+            return acc + passengers;
+        } else {
+            return acc;
+        }
+    }, 0);
 }
 
 /**
