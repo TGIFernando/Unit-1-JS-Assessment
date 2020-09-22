@@ -67,6 +67,7 @@ function getSecondStarshipName(character) {
  */
 function getSummary(character) {
     // TODO: Add your code here.
+    return (`${character.name}, ${character.height}cm, ${character.mass}kg. Featured in ${getFilmCount(character)} films.`);
 }
 
 /**
